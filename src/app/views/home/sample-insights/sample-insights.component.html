@@ -1,0 +1,20 @@
+<section class="sample-insights home-section" id="sample-insights">
+    <div class="container">
+        <h2 class="section-title">Sample Insights</h2>
+        <div class="insight-box" *ngFor="let item of insights; let i = index">
+            <div class="row" [ngClass]="{'flex-row-reverse': i % 2 === 0}">
+                <div class="col-lg-6 col-12 right-side">
+                    <img class="img d-lg-block d-none" src="{{item.img}}" title="{{item.title}}" alt="{{item.title}}">
+                </div>
+                <div class="col-lg-5 col-12 left-side offset-lg-1">
+                    <div class="holder">
+                        <h3 class="title">{{item.title}}</h3>
+                        <img class="img d-lg-none d-block" src="{{item.img}}" title="{{item.title}}"
+                            alt="{{item.title}}">
+                        <p class="content" [innerHTML]="item.content"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

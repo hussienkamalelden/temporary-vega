@@ -1,0 +1,96 @@
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/abstracts/functions";
+@import "../../../../scss/base/fonts";
+
+.what-we-offer {
+    .right-side {
+        .accordion {
+            .accordion-item {
+                margin-bottom: toRem(24);
+                border-radius: toRem(8);
+                background-color: $dark-blue-1;
+                box-shadow: 0px 5px 16px 0px rgba(85, 88, 103, 0.06);
+                border: 2px solid transparent;
+                &.special-border,
+                &:hover {
+                    transition: all 0.3s;
+                    border: 2px solid $secondaryColor-1; /* Add your desired border style when collapsed */
+                }
+                .accordion-header {
+                    .accordion-button {
+                        color: $white;
+                        background-color: transparent;
+                        font-size: toRem(18);
+                        font-family: $font-m;
+                        line-height: toRem(22);
+                        box-shadow: none;
+                        &::after {
+                            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2348EAEB'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+                            background-color: $dark-blue-3;
+                            border-radius: 50%;
+                            width: 30px;
+                            height: 30px;
+                            transform: rotate(0);
+                            background-position: center center;
+                            background-size: 16px;
+                        }
+                    }
+                    .accordion-button.collapsed {
+                        &::after {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+                .accordion-collapse {
+                    .accordion-body {
+                        color: $grey-1;
+                        font-size: toRem(14);
+                        line-height: toRem(25);
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    .left-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+        .img {
+            max-height: toRem(400);
+            max-width: 100%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .what-we-offer {
+        .right-side {
+            .accordion {
+                .accordion-item {
+                    margin-bottom: toRem(24);
+                    .accordion-header {
+                        .accordion-button {
+                            font-size: toRem(22);
+                            line-height: toRem(28);
+                        }
+                    }
+                    .accordion-collapse {
+                        .accordion-body {
+                            font-size: toRem(16);
+                            line-height: toRem(35);
+                        }
+                    }
+                }
+            }
+        }
+        .left-side {
+            .img {
+                justify-content: end;
+                max-height: toRem(400);
+                margin-bottom: 0;
+            }
+        }
+    }
+}

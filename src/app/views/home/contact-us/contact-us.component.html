@@ -1,0 +1,71 @@
+<section class="contact-us home-section" id="contact-us">
+    <div class="container">
+        <h2 class="section-title">Contact us</h2>
+        <form [formGroup]="createRequestForm" class="request-form row g-4" (ngSubmit)="onSubmit()">
+            <!-- Subject Control-->
+            <div class="col-lg-6 col-12">
+                <label class="form-label">Subject</label>
+                <select class="form-select" formControlName="subject">
+                    <option *ngFor="let item of subjects" [value]="item.value">{{item.value}}</option>
+                </select>
+            </div>
+            <!-- Email Control-->
+            <div class="col-lg-6 col-12">
+                <label class="form-label">Email</label>
+                <div class="control-holder">
+                    <input class="form-control" id="email" type="email" placeholder="Enter your email"
+                        formControlName="email" maxlength="100" />
+                    <i class="icon-email"></i>
+                </div>
+                <div *ngIf="email.invalid && (email.touched || submitted)">
+                    <span class="text-validation" *ngIf="email.hasError('required')">This field is required.</span>
+                    <span class="text-validation" *ngIf="email.hasError('email')">Invalid email format.</span>
+                </div>
+            </div>
+            <!-- Name Control-->
+            <div class="col-lg-6 col-12">
+                <label class="form-label">Your Name</label>
+                <div class="control-holder">
+                    <input class="form-control" id="fullName" type="text" placeholder="Enter your name"
+                        formControlName="fullName" maxlength="100" />
+                    <i class="icon-user"></i>
+                </div>
+                <div *ngIf="fullName.invalid && (fullName.touched || submitted)">
+                    <span class="text-validation" *ngIf="fullName.hasError('required')">This field is required.</span>
+                    <span class="text-validation" *ngIf="fullName.hasError('spacesOnly')">This field cannot contain
+                        spaces only.</span>
+                </div>
+            </div>
+            <!-- Phone Control-->
+            <div class="col-lg-6 col-12">
+                <label class="form-label">Phone</label>
+                <div class="control-holder">
+                    <input class="form-control" id="phone" type="number" placeholder="Enter your phone"
+                        formControlName="phone" maxlength="50" />
+                    <i class="icon-phone"></i>
+                </div>
+                <div *ngIf="phone.invalid && (phone.touched || submitted)">
+                    <span class="text-validation" *ngIf="phone.hasError('required')">This field is required.</span>
+                </div>
+            </div>
+            <!-- Message Control-->
+            <div class="col-12">
+                <label class="form-label">Messege</label>
+                <textarea class="form-control textArea" id="textArea" rows="4" placeholder="What would you say"
+                    formControlName="body" [class.is-invalid]="body.invalid &&(body.dirty || body.touched || submitted)"
+                    maxlength="2000">
+              </textarea>
+                <div *ngIf="body.invalid &&(body.dirty || body.touched || submitted)" class="text-validation">
+                    <div *ngIf="body.errors?.['required']">This field is required.</div>
+                    <div *ngIf="body.hasError('spacesOnly')">This field cannot contain spaces only.</div>
+                </div>
+            </div>
+            <!-- Submit-->
+            <div class="col-12">
+                <button class="submit" type="submit" [disabled]="!createRequestForm.valid"
+                    [title]="createRequestForm.valid?'':'Please Fill In All Fields'">Send Request</button>
+            </div>
+        </form>
+
+    </div>
+</section>

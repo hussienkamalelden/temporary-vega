@@ -1,0 +1,14 @@
+<section class="our-experts home-section" id="our-experts">
+    <div class="container">
+        <h2 class="section-title">Our Experts</h2>
+        <div class="row g-lg-5 g-3">
+            <div class="expert-card col-lg-6 col-12" *ngFor="let item of experts; let i = index">
+                <div class="holder">
+                    <i class="{{item.icon}}"></i>
+                    <h3 class="title">{{item.title}}</h3>
+                    <p class="content">{{item.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

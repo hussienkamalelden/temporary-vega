@@ -1,0 +1,31 @@
+<section class="what-we-offer home-section" id="what-we-offer">
+    <div class="container">
+        <h2 class="section-title">What we offer</h2>
+        <div class="row">
+            <div class="col-lg-5 col-12 left-side">
+                <img class="img" src="../../../../assets/images/home/what-we-offer/what_we_offer.png"
+                    alt="What We Offer">
+            </div>
+            <div class="col-lg-6 col-12 right-side">
+                <div class="accordion accordion-flush" id="accordion-vega">
+                    <div class="accordion-item" *ngFor="let item of accordionItems; let i = index"
+                        [ngClass]="{'special-border': !isCollapsed[i]}">
+                        <h2 class="accordion-header" id="heading{{i}}">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                [attr.data-bs-target]="'#collapse'+i" (click)="toggleCollapse(i)">
+                                {{item.title}}
+                            </button>
+                        </h2>
+                        <div id="collapse{{i}}" class="accordion-collapse collapse"
+                            [ngClass]="{'show': !isCollapsed[i]}" [attr.aria-labelledby]="'heading'+i"
+                            data-bs-parent="#accordion-vega">
+                            <div class="accordion-body">
+                                {{item.content}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

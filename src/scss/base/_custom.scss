@@ -1,0 +1,22 @@
+.home-section {
+  padding: toRem(25) 0;
+  .section-title {
+    color: $white;
+    text-align: center;
+    font-family: $font-b;
+    font-size: toRem(25);
+    line-height: 80px;
+    margin-bottom: toRem(40);
+    text-transform: capitalize;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-section {
+    padding: toRem(50) 0;
+    .section-title {
+      font-size: toRem(50);
+      margin-bottom: toRem(80);
+    }
+  }
+}

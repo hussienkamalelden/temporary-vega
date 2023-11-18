@@ -1,0 +1,80 @@
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/abstracts/functions";
+@import "../../../../scss/base/fonts";
+
+.sample-insights {
+    background-color: $dark-blue-1;
+    .insight-box:not(:last-of-type) {
+        margin-bottom: toRem(50);
+    }
+    .insight-box {
+        .left-side {
+            .holder {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                width: 95%;
+                .title {
+                    color: $white;
+                    font-family: $font-m;
+                    font-size: toRem(20);
+                    line-height: 120%;
+                    letter-spacing: -0.736px;
+                }
+                .img {
+                    max-width: 100%;
+                }
+                .content {
+                    color: $grey-1;
+                    font-size: toRem(14);
+                    line-height: toRem(30);
+                    ::ng-deep {
+                        .special {
+                            color: $secondaryColor-2;
+                            font-family: $font-m;
+                        }
+                    }
+                }
+            }
+        }
+        .right-side {
+            .img {
+                width: 100%;
+            }
+        }
+        &:hover {
+            .left-side {
+                .holder {
+                    .title {
+                        transition: all 0.3s;
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .sample-insights {
+        .insight-box:not(:last-of-type) {
+            margin-bottom: toRem(80);
+        }
+        .insight-box {
+            .left-side {
+                .holder {
+                    width: 90%;
+                    .title {
+                        font-size: toRem(32);
+                        line-height: 150%;
+                    }
+                    .content {
+                        font-size: toRem(16);
+                        line-height: toRem(40);
+                    }
+                }
+            }
+        }
+    }
+}

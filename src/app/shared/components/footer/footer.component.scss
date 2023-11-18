@@ -1,0 +1,67 @@
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/abstracts/functions";
+@import "../../../../scss/base/fonts";
+
+footer {
+    background-color: $dark-blue-3;
+    text-align: center;
+    padding: toRem(40) 0;
+    .main-logo {
+        width: toRem(75);
+        margin-bottom: toRem(50);
+    }
+    nav {
+        margin-bottom: toRem(50);
+        ul {
+            list-style-type: none;
+            padding: 0;
+            li {
+                cursor: pointer;
+                color: $white;
+                font-size: toRem(16);
+                text-transform: uppercase;
+                padding: 0;
+                margin-bottom: 2rem;
+                &:hover {
+                    transition: all 0.3s;
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+    .copy-rights {
+        color: $white;
+        opacity: 0.4;
+        font-size: toRem(14);
+        line-height: toRem(32);
+        text-transform: capitalize;
+    }
+}
+
+@media (min-width: 992px) {
+    footer {
+        .main-logo {
+            margin-bottom: toRem(35);
+        }
+        nav {
+            margin-bottom: toRem(35);
+            ul {
+                display: flex;
+                justify-content: center;
+                li {
+                    font-size: toRem(18);
+                    padding: 0 toRem(34);
+                    border-right: 1px solid $white;
+                    margin-bottom: 0;
+                    &:last-of-type {
+                        border: none;
+                    }
+                }
+            }
+        }
+        .copy-rights {
+            font-size: toRem(16);
+            line-height: toRem(32);
+        }
+    }
+}

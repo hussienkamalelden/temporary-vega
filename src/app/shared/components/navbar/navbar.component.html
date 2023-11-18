@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../assets/images/navbar/vega_nav_logo.svg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" (click)="scrollToSection('home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="scrollToSection('what-we-offer')">What we offer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="scrollToSection('sample-insights')">Sample Insights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="scrollToSection('our-experts')">Our experts</a>
+                </li>
+                <li class="nav-item">
+                    <button class="contact d-lg-none d-inline-block" (click)="scrollToSection('contact-us')">Contact
+                        us</button>
+                </li>
+            </ul>
+        </div>
+        <button class="contact d-lg-block d-none" (click)="scrollToSection('contact-us')">Contact us</button>
+    </div>
+</nav>

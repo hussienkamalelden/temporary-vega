@@ -1,0 +1,62 @@
+@import "../../../../scss/icomoon/style.scss";
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/abstracts/functions";
+@import "../../../../scss/base/fonts";
+
+.our-experts {
+    .expert-card {
+        .holder {
+            padding: toRem(25) toRem(35);
+            background-color: $dark-blue-1;
+            border-radius: toRem(8);
+            height: 100%;
+            i {
+                color: $secondaryColor-1;
+                font-size: toRem(35);
+                margin-bottom: toRem(30);
+                display: block;
+            }
+            .title {
+                color: $white;
+                font-family: $font-m;
+                font-size: toRem(20);
+                line-height: toRem(32);
+                text-transform: capitalize;
+                margin-bottom: toRem(18);
+            }
+            .content {
+                color: $grey-1;
+                font-size: toRem(14);
+                line-height: toRem(25);
+                letter-spacing: -0.32px;
+            }
+        }
+        &:hover {
+            transition: all 0.3s;
+            transform: translateY(-10px);
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .our-experts {
+        .expert-card {
+            .holder {
+                padding: toRem(35) toRem(45);
+                i {
+                    font-size: toRem(48);
+                    margin-bottom: toRem(48);
+                }
+                .title {
+                    font-size: toRem(24);
+                    line-height: toRem(32);
+                    margin-bottom: toRem(24);
+                }
+                .content {
+                    font-size: toRem(16);
+                    line-height: toRem(30);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?kxrfp6');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?kxrfp6#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?kxrfp6') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?kxrfp6') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?kxrfp6##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-collaboration {
+  &:before {
+    content: $icon-collaboration; 
+  }
+}
+.icon-user {
+  &:before {
+    content: $icon-user; 
+  }
+}
+.icon-email {
+  &:before {
+    content: $icon-email; 
+  }
+}
+.icon-phone {
+  &:before {
+    content: $icon-phone; 
+  }
+}
+.icon-industry_expertise_1 {
+  &:before {
+    content: $icon-industry_expertise_1; 
+  }
+}
+.icon-industry_expertise_2 {
+  &:before {
+    content: $icon-industry_expertise_2; 
+  }
+}
+.icon-expansive_capabilities {
+  &:before {
+    content: $icon-expansive_capabilities; 
+  }
+}
+

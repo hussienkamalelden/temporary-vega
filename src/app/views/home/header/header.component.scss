@@ -1,0 +1,65 @@
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/abstracts/functions";
+@import "../../../../scss/base/fonts";
+
+.header {
+    margin-top: toRem(25);
+    text-align: center;
+    .header-title {
+        color: $white;
+        font-family: $font-b;
+        margin-bottom: toRem(20);
+        font-size: toRem(30);
+        text-transform: capitalize;
+    }
+    .header-brief {
+        color: $grey-1;
+        font-size: toRem(14);
+        line-height: toRem(25);
+        max-width: 100%;
+        margin: 0 auto toRem(35);
+    }
+    .header-contact {
+        font-family: $font-m;
+        color: $primaryColor;
+        background-color: transparent;
+        border: 1px solid $primaryColor;
+        border-radius: 8px;
+        outline: none;
+        padding: toRem(14);
+        font-size: toRem(12);
+        line-height: toRem(16);
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        margin-bottom: toRem(40);
+        transition: all 0.3s;
+        &:hover {
+            color: $white;
+            background-color: $primaryColor;
+        }
+    }
+    .img-holder {
+        .img {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        margin-top: toRem(50);
+        .header-title {
+            margin-bottom: toRem(25);
+            font-size: toRem(70);
+        }
+        .header-brief {
+            font-size: toRem(16);
+            max-width: 650px;
+            margin: 0 auto toRem(50);
+        }
+        .header-contact {
+            font-size: toRem(14);
+            margin-bottom: toRem(80);
+        }
+    }
+}
