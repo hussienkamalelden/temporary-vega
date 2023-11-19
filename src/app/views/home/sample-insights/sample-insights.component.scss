@@ -58,10 +58,34 @@
 
 @media (min-width: 992px) {
     .sample-insights {
+        position: relative;
+        z-index: 1;
+        .overlay,
+        .overlay-2 {
+            position: absolute;
+            z-index: 2;
+            height: 600px;
+            width: 300px;
+            background-image: url("../../../../assets/images/home/overlay.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: -8%;
+            left: 0;
+        }
+        .overlay-2 {
+            top: auto;
+            left: auto;
+            right: 0;
+            bottom: 5%;
+            transform: scale(-1);
+            width: 150px;
+        }
         .insight-box:not(:last-of-type) {
             margin-bottom: toRem(80);
         }
         .insight-box {
+            position: relative;
+            z-index: 3;
             .left-side {
                 .holder {
                     width: 90%;

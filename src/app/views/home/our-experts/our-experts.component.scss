@@ -40,6 +40,20 @@
 
 @media (min-width: 992px) {
     .our-experts {
+        position: relative;
+        z-index: 1;
+        .overlay-2 {
+            position: absolute;
+            z-index: 2;
+            height: 600px;
+            background-image: url("../../../../assets/images/home/overlay.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            right: 0;
+            bottom: 5%;
+            transform: scale(-1);
+            width: 150px;
+        }
         .expert-card {
             .holder {
                 padding: toRem(35) toRem(45);

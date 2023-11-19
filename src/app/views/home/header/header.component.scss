@@ -48,6 +48,19 @@
 @media (min-width: 992px) {
     .header {
         margin-top: toRem(50);
+        position: relative;
+        z-index: 1;
+        .overlay {
+            position: absolute;
+            z-index: 2;
+            height: 300px;
+            width: 200px;
+            background-image: url("../../../../assets/images/home/overlay.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: 0;
+            left: 0;
+        }
         .header-title {
             margin-bottom: toRem(25);
             font-size: toRem(70);
