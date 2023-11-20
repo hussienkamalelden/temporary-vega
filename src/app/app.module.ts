@@ -13,6 +13,7 @@ import { ContactUsComponent } from './views/home/contact-us/contact-us.component
 import { HomeComponent } from './views/home/home.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -36,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
+    NgxIntlTelInputModule,
     HttpClientModule,
     ToastrModule.forRoot({
       preventDuplicates: true,

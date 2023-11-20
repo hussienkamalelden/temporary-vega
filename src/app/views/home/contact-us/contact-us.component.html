@@ -1,7 +1,7 @@
 <section class="contact-us home-section" id="contact-us">
     <div class="container">
         <h2 class="section-title">Contact us</h2>
-        <form [formGroup]="createRequestForm" class="request-form row g-4" (ngSubmit)="onSubmit()">
+        <form #f="ngForm" [formGroup]="createRequestForm" class="request-form row g-4" (ngSubmit)="onSubmit()">
             <!-- Subject Control-->
             <div class="col-lg-6 col-12">
                 <label class="form-label">Subject</label>
@@ -36,18 +36,40 @@
                         spaces only.</span>
                 </div>
             </div>
+
             <!-- Phone Control-->
             <div class="col-lg-6 col-12">
                 <label class="form-label">Phone</label>
-                <div class="control-holder">
+                <!-- <div class="control-holder">
                     <input class="form-control" id="phone" type="number" placeholder="Enter your phone"
                         formControlName="phone" maxlength="50" />
                     <i class="icon-phone"></i>
                 </div>
                 <div *ngIf="phone.invalid && (phone.touched || submitted)">
                     <span class="text-validation" *ngIf="phone.hasError('required')">This field is required.</span>
+                </div> -->
+                <div class="control-holder">
+                    <div class="form-control">
+                        <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries"
+                            [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                            [customPlaceholder]="'Enter your phone'" [searchCountryField]="[
+                        SearchCountryField.Iso2,
+                        SearchCountryField.Name
+                      ]" [selectFirstCountry]="true" [selectedCountryISO]="preferredCountries[0]"
+                            [separateDialCode]="separateDialCode" [maxLength]="15"
+                            [numberFormat]="PhoneNumberFormat.International" [phoneValidation]="true" name="phone"
+                            formControlName="phone" id="phone">
+                        </ngx-intl-tel-input>
+                        <i class="icon-phone"></i>
+                    </div>
+                </div>
+                <div *ngIf="phone.invalid && (phone.touched || submitted)">
+                    <div class="text-validation" *ngIf="!f.form.value.phone">
+                        This field is required.
+                    </div>
                 </div>
             </div>
+
             <!-- Message Control-->
             <div class="col-12">
                 <label class="form-label">Messege</label>

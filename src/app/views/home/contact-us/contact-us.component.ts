@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ContactService } from 'src/app/shared/services/contact.service';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { ScrollService } from 'src/app/shared/services/scroll.service';
+import { CountryISO, SearchCountryField, PhoneNumberFormat } from 'ngx-intl-tel-input';
 
 @Component({
   selector: 'app-contact-us',
@@ -14,6 +15,10 @@ export class ContactUsComponent implements OnInit {
   //Form Variables
   createRequestForm: FormGroup;
   submitted = false;
+  separateDialCode = true;
+  SearchCountryField = SearchCountryField;
+  PhoneNumberFormat = PhoneNumberFormat;
+  preferredCountries: CountryISO[] = [CountryISO.Egypt, CountryISO.SaudiArabia];
 
   //Form Select Options
   subjects = [
@@ -32,7 +37,6 @@ export class ContactUsComponent implements OnInit {
       phone: new FormControl('', [Validators.required]),
       body: new FormControl('', [Validators.required, this.spacesOnlyValidator]),
     });
-
   }
 
   ngOnInit(): void {
@@ -74,9 +78,19 @@ export class ContactUsComponent implements OnInit {
     return null;
   }
 
+  filtterData(array: any, phoneNum: string) {
+    delete array.phone;
+    var number: String = phoneNum;
+    var x = number.replace(/\s/g, '');
+    array.phone = x;
+    return array;
+  }
+
   onSubmit() {
     this.submitted = true;
-    this.ContactService.createRequest('https://www.qeema.net/api/v1/contact', this.createRequestForm.value).subscribe(
+    var filteredData = this.filtterData(this.createRequestForm.value, this.createRequestForm.value.phone.internationalNumber);
+
+    this.ContactService.createRequest('https://www.qeema.net/api/v1/contact', filteredData).subscribe(
       response => {
         this.toastr.success('Your request sent successfully!', 'Success');
         setTimeout(() => {

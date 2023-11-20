@@ -8,6 +8,11 @@ import { ScrollService } from 'src/app/shared/services/scroll.service';
 })
 export class HeaderComponent implements OnInit {
 
+
+  scrollToSections(section: string): void {
+    this.scrollService.scrollToSection(section);
+  }
+
   constructor(private scrollService: ScrollService, private el: ElementRef) { }
 
   ngOnInit(): void {

@@ -43,16 +43,6 @@
                 width: 100%;
             }
         }
-        &:hover {
-            .left-side {
-                .holder {
-                    .title {
-                        transition: all 0.3s;
-                        color: $primaryColor;
-                    }
-                }
-            }
-        }
     }
 }
 
