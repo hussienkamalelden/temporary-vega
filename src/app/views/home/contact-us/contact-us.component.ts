@@ -95,13 +95,13 @@ export class ContactUsComponent implements OnInit {
         this.toastr.success('Your request sent successfully!', 'Success');
         setTimeout(() => {
           window.location.reload();
-        }, 2000);
+        }, 3000);
       },
       error => {
         this.toastr.error('Failed to send your request!', 'Failed');
         setTimeout(() => {
           window.location.reload();
-        }, 2000);
+        }, 3000);
       }
     );
     // this.createRequestForm.controls['body'].reset();

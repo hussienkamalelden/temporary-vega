@@ -67,6 +67,14 @@
                     <div class="text-validation" *ngIf="!f.form.value.phone">
                         This field is required.
                     </div>
+                    <div class="text-validation" *ngIf="
+                        f.form.value.phone &&
+                        f.form.controls['phone'].hasError(
+                          'validatePhoneNumber'
+                        )
+                      ">
+                        Invalid Phone Number.
+                    </div>
                 </div>
             </div>
 
